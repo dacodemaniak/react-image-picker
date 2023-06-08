@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Text, StyleSheet, ViewStyle, TextStyle, ScrollView} from 'react-native';
+import Styles from '../interfaces/styles/styles';
 
 export function DemoResponse({children}: React.PropsWithChildren<{}>) {
   if (children == null) {
@@ -13,10 +14,7 @@ export function DemoResponse({children}: React.PropsWithChildren<{}>) {
   );
 }
 
-interface Styles {
-  container: ViewStyle;
-  text: TextStyle;
-}
+
 
 const styles = StyleSheet.create<Styles>({
   container: {

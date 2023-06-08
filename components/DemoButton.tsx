@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, Pressable, ViewStyle, TextStyle} from 'react-native';
 
+import Styles from '../interfaces/styles/styles';
 interface Props {
   onPress: () => void;
 }
@@ -23,10 +24,6 @@ export function DemoButton({
   );
 }
 
-interface Styles {
-  container: ViewStyle;
-  text: TextStyle;
-}
 
 const styles = StyleSheet.create<Styles>({
   container: {

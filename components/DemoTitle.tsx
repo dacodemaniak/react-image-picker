@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, Text, StyleSheet, ViewStyle, TextStyle} from 'react-native';
-
+import Styles from '../interfaces/styles/styles';
 interface Props {
   children: string;
 }
@@ -11,11 +11,6 @@ export function DemoTitle({children}: Props) {
       <Text style={styles.text}>{children}</Text>
     </View>
   );
-}
-
-interface Styles {
-  container: ViewStyle;
-  text: TextStyle;
 }
 
 const styles = StyleSheet.create<Styles>({
