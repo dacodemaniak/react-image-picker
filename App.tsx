@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 
 import { DemoButton, DemoResponse, DemoTitle } from './components'
+import Action from './interfaces/actions/action'
 
 import * as ImagePicker from 'react-native-image-picker'
 
@@ -52,6 +53,7 @@ function App(): JSX.Element {
             );
           })}
         </View>
+        
         <DemoResponse>{response}</DemoResponse>
 
         {response?.assets &&
@@ -90,12 +92,6 @@ const styles = StyleSheet.create({
   }
 });
 
-interface Action {
-  title: string;
-  type: 'capture' | 'library';
-  options: ImagePicker.CameraOptions | ImagePicker.ImageLibraryOptions;
-}
-
 const actions: Action[] = [
   {
     title: 'Take Image',
@@ -114,26 +110,6 @@ const actions: Action[] = [
       selectionLimit: 0,
       mediaType: 'photo',
       includeBase64: false,
-      includeExtra,
-    },
-  },
-  {
-    title: 'Take Video',
-    type: 'capture',
-    options: {
-      saveToPhotos: true,
-      formatAsMp4: true,
-      mediaType: 'video',
-      includeExtra,
-    },
-  },
-  {
-    title: 'Select Video',
-    type: 'library',
-    options: {
-      selectionLimit: 0,
-      mediaType: 'video',
-      formatAsMp4: true,
       includeExtra,
     },
   },
